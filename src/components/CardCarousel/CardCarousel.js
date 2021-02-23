@@ -16,8 +16,8 @@ class CardCarousel extends React.Component {
       <Swiper
         spaceBetween={50}
         slidesPerView={1}
-        onSlideChange={() => console.log('slide change')}
-        onSwiper={(swiper) => console.log(swiper)}
+        // onSlideChange={() => console.log('slide change')}
+        // onSwiper={(swiper) => console.log(swiper)}
       >
         {this.props.cards.map((card) => {
           return (

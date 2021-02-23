@@ -3,6 +3,9 @@
     "^.+\\.js$": "babel-jest",
     ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "jest-transform-stub"
   },
+  "moduleNameMapper": {
+    "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+  },
   "transformIgnorePatterns": ["<rootDir>/node_modules/"],
   "verbose": true,
   "collectCoverage": true
