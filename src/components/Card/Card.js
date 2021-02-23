@@ -9,14 +9,18 @@ class Card extends React.Component {
   }
 
   flip() {
-    var card = document.querySelector('.flip-card-inner');
+    var card = document.getElementById(`${this.props.info.id}`);
     card.classList.toggle('is-flipped');
   }
 
   render() {
     return (
       <div className="flip-card center">
-        <div className="flip-card-inner" onClick={this.flip}>
+        <div
+          id={this.props.info.id}
+          className="flip-card-inner"
+          onClick={this.flip}
+        >
           <div className="flip-card-front">
             <h1 className="noSelect">{this.props.info.front}</h1>
           </div>

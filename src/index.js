@@ -9,9 +9,9 @@ ReactDOM.render(
   <React.StrictMode>
     <CardCarousel
       cards={[
-        { front: 'teste1', back: 'testado1' },
-        { front: 'teste2', back: 'testado2' },
-        { front: 'teste3', back: 'testado3' },
+        { id: 1, front: 'teste1', back: 'testado1' },
+        { id: 2, front: 'teste2', back: 'testado2' },
+        { id: 3, front: 'teste3', back: 'testado3' },
       ]}
     />
   </React.StrictMode>,

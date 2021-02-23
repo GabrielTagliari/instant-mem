@@ -26,7 +26,11 @@ describe('Card', () => {
   it('flip', () => {
     const card = shallow(
       <Card
-        info={{ front: 'This is my front', back: 'This is my back' }}
+        info={{
+          id: 1,
+          front: 'This is my front',
+          back: 'This is my back',
+        }}
       />,
     );
 
@@ -34,15 +38,13 @@ describe('Card', () => {
       classList: { toggle: jest.fn() },
     };
 
-    jest.spyOn(document, 'querySelector').mockImplementation(() => {
+    jest.spyOn(document, 'getElementById').mockImplementation(() => {
       return mockFn;
     });
 
     card.instance().flip();
 
-    expect(document.querySelector).toHaveBeenCalledWith(
-      '.flip-card-inner',
-    );
+    expect(document.getElementById).toHaveBeenCalledWith('1');
     expect(mockFn.classList.toggle).toHaveBeenCalledWith(
       'is-flipped',
     );
