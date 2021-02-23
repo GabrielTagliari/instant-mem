@@ -1,17 +1,8 @@
-.center {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-
 .flip-card {
   background-color: transparent;
   transition: 0.3s;
-  width: 50%;
-  height: 40%;
+  width: 70%;
+  height: 50%;
   perspective: 1000px;
 }
 
