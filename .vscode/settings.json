@@ -3,5 +3,12 @@
   "editor.formatOnSave": true,
   "eslint.format.enable": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "cSpell.words": ["Adapter", "Enzyme", "jest", "props", "shallow"]
+  "cSpell.words": [
+    "Adapter",
+    "Enzyme",
+    "Pagination",
+    "jest",
+    "props",
+    "shallow"
+  ]
 }

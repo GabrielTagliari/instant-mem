@@ -2,6 +2,7 @@
   background-color: transparent;
   transition: 0.3s;
   width: 70%;
+  max-width: 800px;
   height: 50%;
   perspective: 1000px;
 }
@@ -35,12 +36,12 @@
 }
 
 .flip-card-front {
-  background-color: white;
-  color: black;
+  background-color: #2b303d;
+  color: white;
 }
 
 .flip-card-back {
-  background-color: #2980b9;
+  background-color: #164564;
   color: white;
   transform: rotateY(180deg);
 }
