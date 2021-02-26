@@ -15,49 +15,22 @@
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-    <script
-      type="text/javascript"
-      src="https://npmcdn.com/parse/dist/parse.min.js"
-    ></script>
-
     <title>Instant Mem</title>
+
+    <script type="text/javascript">
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+      window.addEventListener('resize', () => {
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+      });
+    </script>
   </head>
   <body>
     <noscript
       >You need to enable JavaScript to run this app.</noscript
     >
-
-    <script>
-      // Parse.initialize(
-      //   'jphAOx9smRF1BC13czIhSpKSy3Az6ErU96yLCyHA',
-      //   '3Bo4GoTGFZAurWVf76ICd157f6m8vg8D1H7i0g76',
-      // );
-      // Parse.serverURL = 'https://parseapi.back4app.com/';
-      // var Card = Parse.Object.extend('Card');
-
-      // query = new Parse.Query(Card);
-      // console.log(query.find());
-      // var Card = Parse.Object.extend('Card');
-      // card = new Card();
-      // card
-      //   .save({
-      //     username: 'gabriel',
-      //     email: 'gabriel.tagliari93@gmail.com',
-      //     password: '1263456',
-      //   })
-      //   .then(function (response) {
-      //     alert(
-      //       'New object create with success! ObjectId: ' +
-      //         response.id +
-      //         ', ' +
-      //         card.get('username'),
-      //     );
-      //   })
-      //   .catch(function (error) {
-      //     alert('Error: ' + error.message);
-      //   });
-    </script>
-
     <div id="root"></div>
   </body>
 </html>
