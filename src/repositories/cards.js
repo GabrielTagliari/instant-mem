@@ -1,14 +1,24 @@
-import config from '../config';
-
-const URL_CARDS = `${config.URL_BASE}`;
+// import config from '../config';
+// const URL_CARDS = `${config.URL_BASE}`;
+import Parse from 'parse';
 
 function getAll() {
-  return fetch(URL_CARDS).then(async (response) => {
-    if (response.ok) {
-      return await response.json();
-    }
+  return new Promise((resolve) => {
+    var Card = Parse.Object.extend('Card');
 
-    throw new Error('Something went wrong :(');
+    const query = new Parse.Query(Card);
+
+    query.find().then((data) => {
+      const cards = data.map((item) => {
+        return {
+          id: item.id,
+          front: item.attributes.front,
+          back: item.attributes.back,
+        };
+      });
+      console.log(cards);
+      resolve(cards);
+    });
   });
 }
 

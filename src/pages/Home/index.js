@@ -2,24 +2,22 @@
 import React, { useEffect, useState } from 'react';
 import CardCarousel from '../../components/CardCarousel/CardCarousel';
 import cardsRepository from '../../repositories/cards';
+import Loading from '../../components/Loading/Loading';
 
 function Home() {
   const [initialData, setInitialData] = useState([]);
+  const [isLoading, switchLoading] = useState(true);
 
   useEffect(() => {
-    cardsRepository
-      .getAll()
-      .then((response) => {
-        setInitialData(response.data);
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
+    cardsRepository.getAll().then((cards) => {
+      setInitialData(cards);
+      switchLoading(false);
+    });
   }, []);
 
   return (
     <>
-      <CardCarousel cards={initialData} />
+      {isLoading ? <Loading /> : <CardCarousel cards={initialData} />}
     </>
   );
 }
